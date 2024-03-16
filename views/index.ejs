@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador de Livros</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Buscador de Livros</h1>
+  <form action="/buscar" method="GET">
+    <div>
+      <label for="titulo">Título:</label>
+      <input type="text" id="titulo" name="titulo">
+      <input type="radio" id="tipoBuscaTitulo" name="tipoBusca" value="titulo">
+      <label for="tipoBuscaTitulo">Buscar por título</label>
+    </div>
+    <div>
+      <label for="ano">Ano:</label>
+      <input type="number" id="ano" name="ano">
+      <input type="radio" id="tipoBuscaAno" name="tipoBusca" value="ano">
+      <label for="tipoBuscaAno">Buscar por ano</label>
+    </div>
+    <button type="submit">Buscar</button>
+  </form>
+  <div>
+    <% if (resultado && resultado.length > 0) { %>
+      <h2>Resultado da busca:</h2>
+      <ul>
+        <% resultado.forEach(livro => { %>
+          <li><%= livro.id %> - <%= livro.titulo %> - <%= livro.autor %> (Ano: <%= livro.ano %>)</li>
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <p>Nenhum livro encontrado.</p>
+    <% } %>
+  </div>
+</body>
+</html>
