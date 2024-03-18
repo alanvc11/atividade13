@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
 // Rota para buscar livros com base nos parâmetros de consulta
 app.get('/buscar', (req, res) => {
   // Extrai os parâmetros de consulta da requisição
-  const { titulo, ano, tipoBusca } = req.query;
+  const { titulo, ano, tipoBusca } = req.query; //extrair propriedades do objeto req.query
   let resultado = [];
 
   // Verifica o tipo de busca e chama a função correspondente para buscar os livros
