@@ -24,10 +24,10 @@
     <button type="submit">Buscar</button>
   </form>
   <div>
-    <% if (resultado && resultado.length > 0) { %>
+    <% if (resultado && resultado.length > 0) { %> // verifica se a variável resultado existe e se seu comprimento é maior que zero.
       <h2>Resultado da busca:</h2>
       <ul>
-        <% resultado.forEach(livro => { %>
+        <% resultado.forEach(livro => { %> //  é usada para iterar sobre cada elemento do array resultado, que supostamente contém objetos representando os livros encontrados na busca. 
           <li><%= livro.id %> - <%= livro.titulo %> - <%= livro.autor %> (Ano: <%= livro.ano %>)</li>
         <% }); %>
       </ul>
