@@ -24,7 +24,7 @@ function buscarLivroPorTitulo(titulo) {
 
 // Função para buscar livros por ano
 function buscarLivroPorAno(ano) {
-  return livros.filter(livro => livro.ano === parseInt(ano));
+  return livros.filter(livro => livro.ano === parseInt(ano)); //é necessário usar parseInt() para convertê-lo em um número antes de compará-lo.
 }
 
 // Configuração do mecanismo de visualização EJS
